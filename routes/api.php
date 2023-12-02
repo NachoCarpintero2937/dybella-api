@@ -51,6 +51,7 @@ Route::middleware(['api'])->group(function () {
         Route::post('/update', 'update');
         Route::post('/delete', 'destroy');
         Route::post('/updateStatus', 'updateStatus');
+        Route::get('/emailShifts', 'sendEmailsForNewShiftsInFiveMinutes');
     });
 
     Route::controller(UserController::class)->prefix('users')->group(function () {

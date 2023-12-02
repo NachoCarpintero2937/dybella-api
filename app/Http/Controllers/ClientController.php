@@ -57,10 +57,10 @@ class ClientController extends Controller
         try {
             $validatedData = $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|email',
                 'cod_area' => 'required',
+                'email' => 'email',
                 'phone' => 'required',
-                'date_birthday' => 'required|date',
+                'date_birthday' => 'date',
             ]);
 
             $client = Client::createClient($validatedData);
@@ -68,6 +68,10 @@ class ClientController extends Controller
             return $this->apiService->sendResponse($data, '', 200, true);
         } catch (\Exception $e) {
             $message =  $e->getMessage();
+            // Verificar si la excepción es de tipo QueryException y si es por clave única duplicada
+            if ($e instanceof \Illuminate\Database\QueryException && strpos($message, 'clients_email_unique') !== false) {
+                $message = 'Este correo electrónico ya está registrado';
+            }
             return $this->apiService->sendResponse($data, $message, 400, false);
         }
     }
@@ -90,10 +94,10 @@ class ClientController extends Controller
         try {
             $validatedData = $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|email',
+                'email' => 'email',
                 'cod_area' => 'required',
                 'phone' => 'required',
-                'date_birthday' => 'required|date',
+                'date_birthday' => 'date',
             ]);
             $clientUp = $client->updateClient($validatedData);
             $data = [
@@ -140,7 +144,8 @@ class ClientController extends Controller
             ->whereDay('date_birthday', $currentDate->day)
             ->get();
         foreach ($clients as $client) {
-            Mail::to($client->email)->send(new BirthdayGreetings($client));
+            if ($client->email)
+                Mail::to($client->email)->send(new BirthdayGreetings($client));
         }
     }
 }

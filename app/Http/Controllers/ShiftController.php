@@ -15,6 +15,7 @@ use App\Services\ApiService;
 use Carbon\Carbon;
 use Error;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class ShiftController extends Controller
@@ -24,7 +25,8 @@ class ShiftController extends Controller
     public function __construct(ApiService $apiService)
     {
         $this->apiService = $apiService;
-        $this->middleware('auth:api');
+        $this->middleware('auth:api', ['except' => ['sendEmailsForNewShiftsInFiveMinutes']]);
+        // sendEmailsForNewShiftsInFiveMinutes
     }
     public function index(Request $request)
     {
@@ -109,19 +111,6 @@ class ShiftController extends Controller
                 'shift' => $shift,
                 'serviceName' => $serviceName, // Agrega el nombre del servicio al array de datos
             ];
-
-            // Envía un correo electrónico al cliente
-            $client = Client::find($validatedData['client_id']);
-            if ($client) {
-                $mailData = [
-                    'clientName' => $client->name,
-                    'shiftDate' => $validatedData['date_shift'],
-                    'serviceName' => $serviceName, // Agrega el nombre del servicio al array de datos
-                    // Otros datos que desees incluir en el correo
-                ];
-
-                Mail::to($client->email)->send(new TurnAssigned($mailData));
-            }
 
             return $this->apiService->sendResponse($data, '', 200, true);
         } catch (\Exception $e) {
@@ -208,6 +197,63 @@ class ShiftController extends Controller
         } catch (\Exception $e) {
             $message = $e->getMessage();
             return $this->apiService->sendResponse([], $message, 400, false);
+        }
+    }
+
+
+    // emails
+    public function sendEmailsForNewShiftsInFiveMinutes()
+    {
+        // Extraer horas de inicio y fin
+        $currentTime = Carbon::now()->subMinutes(5);
+        $endTime = $currentTime->copy()->addMinutes(5);
+        var_dump($currentTime->format('Y-m-d H:i:s'));
+        var_dump($endTime->format('Y-m-d H:i:s'));
+
+        // Consulta SQL directa con BETWEEN
+        $consulta = "
+            SELECT *
+            FROM shifts
+            WHERE created_at BETWEEN '" . $currentTime . "' AND '" . $endTime . "'
+        ";
+
+
+        // Ejecuta la consulta SQL
+        $newShifts = DB::select($consulta);
+        var_dump($newShifts);
+
+        foreach ($newShifts as $shift) {
+            // Obtén los datos necesarios y envía el correo
+            $validatedData = [
+                'service_id' => $shift->service_id,
+                'client_id' => $shift->client_id,
+                'user_id' => $shift->user_id,
+                'date_shift' => $shift->date_shift,
+                'description' => $shift->description,
+                'price' => $shift->price,
+                'status' => $shift->status,
+            ];
+
+            $this->sendEmailForNewShift($validatedData);
+        }
+    }
+    public function sendEmailForNewShift($validatedData)
+    {
+        // Obtén el nombre del servicio
+        $serviceName = Service::find($validatedData['service_id'])->name;
+
+        // Envía un correo electrónico al cliente
+        $client = Client::find($validatedData['client_id']);
+        if ($client) {
+            $mailData = [
+                'clientName' => $client->name,
+                'shiftDate' => $validatedData['date_shift'],
+                'serviceName' => $serviceName,
+                // Otros datos que desees incluir en el correo
+            ];
+            if ($client->email) {
+                Mail::to($client->email)->send(new TurnAssigned($mailData));
+            }
         }
     }
 }

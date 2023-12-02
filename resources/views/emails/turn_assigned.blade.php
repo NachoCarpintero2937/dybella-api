@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div role="section">
-                        <div style="width:100%;max-width:850px;background-color:#eeeeee;margin-left:auto;margin-right:auto">
+                        <div style="width:450px;max-width:850px;background-color:#eeeeee;margin-left:auto;margin-right:auto">
                             <div style="margin:auto;padding-top:10px;padding-bottom:15px;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word;height:13px;font-family:Arial;font-size:11px;font-weight:normal;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;text-align:center;color:#444444;">
                             </div>
                             <div style="padding-top:20px;background-color:#ffffff;max-width:600px;min-width:320px;width:320px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word;margin-right:auto;margin-left:auto;margin-bottom:0px">
