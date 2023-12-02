@@ -2988,3 +2988,441 @@ Did you mean one of these?
 #30 /home/c1791875/public_html/api/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #31 {main}
 "} 
+[2023-12-02 21:49:00] local.ERROR: Undefined variable $mailData {"view":{"view":"C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php","data":{"client":"<pre class=sf-dump id=sf-dump-1012013371 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Client</span> {<a class=sf-dump-ref>#1099</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"5 characters\">email</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"8 characters\">cod_area</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"5 characters\">phone</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"13 characters\">date_birthday</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"7 characters\">clients</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>4</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Nacho Carpintero</span>\"
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"31 characters\">carpinterojuanignacio@gmail.com</span>\"
+    \"<span class=sf-dump-key>cod_area</span>\" => \"<span class=sf-dump-str title=\"2 characters\">11</span>\"
+    \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"8 characters\">21772141</span>\"
+    \"<span class=sf-dump-key>date_birthday</span>\" => \"<span class=sf-dump-str title=\"10 characters\">1997-12-02</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-01 14:16:08</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-02 21:48:22</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>4</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Nacho Carpintero</span>\"
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"31 characters\">carpinterojuanignacio@gmail.com</span>\"
+    \"<span class=sf-dump-key>cod_area</span>\" => \"<span class=sf-dump-str title=\"2 characters\">11</span>\"
+    \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"8 characters\">21772141</span>\"
+    \"<span class=sf-dump-key>date_birthday</span>\" => \"<span class=sf-dump-str title=\"10 characters\">1997-12-02</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-01 14:16:08</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-02 21:48:22</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1012013371\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","connection":"<pre class=sf-dump id=sf-dump-2075106911 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-2075106911\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","queue":"<pre class=sf-dump id=sf-dump-823529658 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-823529658\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainConnection":"<pre class=sf-dump id=sf-dump-283814250 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-283814250\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainQueue":"<pre class=sf-dump id=sf-dump-2042253551 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-2042253551\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainCatchCallbacks":"<pre class=sf-dump id=sf-dump-1915340576 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1915340576\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","delay":"<pre class=sf-dump id=sf-dump-2146934071 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-2146934071\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","afterCommit":"<pre class=sf-dump id=sf-dump-892883768 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-892883768\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","middleware":"<pre class=sf-dump id=sf-dump-1359494215 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1359494215\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chained":"<pre class=sf-dump id=sf-dump-1360982043 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1360982043\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","mailer":"<pre class=sf-dump id=sf-dump-726331539 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"4 characters\">smtp</span>\"
+</pre><script>Sfdump(\"sf-dump-726331539\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","message":"<pre class=sf-dump id=sf-dump-1903744808 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Mail\\Message</span> {<a class=sf-dump-ref>#1356</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">message</span>: <span class=sf-dump-note title=\"Symfony\\Component\\Mime\\Email
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Symfony\\Component\\Mime</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Email</span> {<a class=sf-dump-ref>#1355</a><samp data-depth=2 class=sf-dump-compact>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">text</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">textCharset</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">html</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">htmlCharset</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">attachments</span>: []
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">cachedBody</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Message`\">headers</span>: <span class=sf-dump-note title=\"Symfony\\Component\\Mime\\Header\\Headers
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Symfony\\Component\\Mime\\Header</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Headers</span> {<a class=sf-dump-ref>#1354</a><samp data-depth=3 class=sf-dump-compact>
+      -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Header\\Headers`\">headers</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Header\\Headers`\">lineLength</span>: <span class=sf-dump-num>76</span>
+    </samp>}
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Message`\">body</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\RawMessage`\">message</span>: <span class=sf-dump-const>null</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">embeddedFiles</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1903744808\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $mailData at C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php:48)
+[stacktrace]
+#0 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#1 C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#2 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\xampp_\\\\htdoc...')
+#3 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp_\\\\htdoc...', Array)
+#5 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp_\\\\htdoc...', Array)
+#6 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp_\\\\htdoc...', Array)
+#7 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(383): Illuminate\\View\\View->render()
+#10 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(360): Illuminate\\Mail\\Mailer->renderView('emails.birthday', Array)
+#11 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(272): Illuminate\\Mail\\Mailer->addContent(Object(Illuminate\\Mail\\Message), 'emails.birthday', NULL, NULL, Array)
+#12 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(212): Illuminate\\Mail\\Mailer->send('emails.birthday', Array, Object(Closure))
+#13 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->Illuminate\\Mail\\{closure}()
+#14 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(213): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#15 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(309): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\Mailer))
+#16 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(253): Illuminate\\Mail\\Mailer->sendMailable(Object(App\\Mail\\BirthdayGreetings))
+#17 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\PendingMail.php(124): Illuminate\\Mail\\Mailer->send(Object(App\\Mail\\BirthdayGreetings))
+#18 C:\\xampp_\\htdocs\\dybella-api\\app\\Http\\Controllers\\ClientController.php(144): Illuminate\\Mail\\PendingMail->send(Object(App\\Mail\\BirthdayGreetings))
+#19 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\ClientController->getBirthdayClient()
+#20 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getBirthdayClie...', Array)
+#21 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ClientController), 'getBirthdayClie...')
+#22 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#23 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Route->run()
+#24 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#29 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#30 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#31 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 C:\\xampp_\\htdocs\\dybella-api\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $mailData at C:\\xampp_\\htdocs\\dybella-api\\storage\\framework\\views\\f00e43dd2cb466be9e96b0220a6d645a1c7765d9.php:48)
+[stacktrace]
+#0 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#1 C:\\xampp_\\htdocs\\dybella-api\\storage\\framework\\views\\f00e43dd2cb466be9e96b0220a6d645a1c7765d9.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#2 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\xampp_\\\\htdoc...')
+#3 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp_\\\\htdoc...', Array)
+#5 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp_\\\\htdoc...', Array)
+#6 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp_\\\\htdoc...', Array)
+#7 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(383): Illuminate\\View\\View->render()
+#10 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(360): Illuminate\\Mail\\Mailer->renderView('emails.birthday', Array)
+#11 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(272): Illuminate\\Mail\\Mailer->addContent(Object(Illuminate\\Mail\\Message), 'emails.birthday', NULL, NULL, Array)
+#12 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(212): Illuminate\\Mail\\Mailer->send('emails.birthday', Array, Object(Closure))
+#13 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->Illuminate\\Mail\\{closure}()
+#14 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(213): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#15 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(309): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\Mailer))
+#16 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(253): Illuminate\\Mail\\Mailer->sendMailable(Object(App\\Mail\\BirthdayGreetings))
+#17 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\PendingMail.php(124): Illuminate\\Mail\\Mailer->send(Object(App\\Mail\\BirthdayGreetings))
+#18 C:\\xampp_\\htdocs\\dybella-api\\app\\Http\\Controllers\\ClientController.php(144): Illuminate\\Mail\\PendingMail->send(Object(App\\Mail\\BirthdayGreetings))
+#19 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\ClientController->getBirthdayClient()
+#20 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getBirthdayClie...', Array)
+#21 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ClientController), 'getBirthdayClie...')
+#22 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#23 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Route->run()
+#24 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#29 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#30 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#31 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 C:\\xampp_\\htdocs\\dybella-api\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 {main}
+"} 
+[2023-12-02 21:50:23] local.ERROR: Undefined variable $mailData {"view":{"view":"C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php","data":{"client":"<pre class=sf-dump id=sf-dump-329608630 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Client</span> {<a class=sf-dump-ref>#1099</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"5 characters\">email</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"8 characters\">cod_area</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"5 characters\">phone</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"13 characters\">date_birthday</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"7 characters\">clients</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>4</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Nacho Carpintero</span>\"
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"31 characters\">carpinterojuanignacio@gmail.com</span>\"
+    \"<span class=sf-dump-key>cod_area</span>\" => \"<span class=sf-dump-str title=\"2 characters\">11</span>\"
+    \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"8 characters\">21772141</span>\"
+    \"<span class=sf-dump-key>date_birthday</span>\" => \"<span class=sf-dump-str title=\"10 characters\">1997-12-02</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-01 14:16:08</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-02 21:48:22</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>4</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Nacho Carpintero</span>\"
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"31 characters\">carpinterojuanignacio@gmail.com</span>\"
+    \"<span class=sf-dump-key>cod_area</span>\" => \"<span class=sf-dump-str title=\"2 characters\">11</span>\"
+    \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"8 characters\">21772141</span>\"
+    \"<span class=sf-dump-key>date_birthday</span>\" => \"<span class=sf-dump-str title=\"10 characters\">1997-12-02</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-01 14:16:08</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-12-02 21:48:22</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+</samp>}
+</pre><script>Sfdump(\"sf-dump-329608630\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","connection":"<pre class=sf-dump id=sf-dump-1608700671 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1608700671\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","queue":"<pre class=sf-dump id=sf-dump-1826173283 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1826173283\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainConnection":"<pre class=sf-dump id=sf-dump-1679183525 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1679183525\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainQueue":"<pre class=sf-dump id=sf-dump-634199336 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-634199336\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chainCatchCallbacks":"<pre class=sf-dump id=sf-dump-557144178 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-557144178\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","delay":"<pre class=sf-dump id=sf-dump-177183833 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-177183833\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","afterCommit":"<pre class=sf-dump id=sf-dump-475921522 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-475921522\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","middleware":"<pre class=sf-dump id=sf-dump-1457783810 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1457783810\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","chained":"<pre class=sf-dump id=sf-dump-1256135144 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1256135144\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","mailer":"<pre class=sf-dump id=sf-dump-1841011995 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"4 characters\">smtp</span>\"
+</pre><script>Sfdump(\"sf-dump-1841011995\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","message":"<pre class=sf-dump id=sf-dump-1985900716 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Mail\\Message</span> {<a class=sf-dump-ref>#1356</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">message</span>: <span class=sf-dump-note title=\"Symfony\\Component\\Mime\\Email
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Symfony\\Component\\Mime</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Email</span> {<a class=sf-dump-ref>#1355</a><samp data-depth=2 class=sf-dump-compact>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">text</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">textCharset</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">html</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">htmlCharset</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">attachments</span>: []
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Email`\">cachedBody</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Message`\">headers</span>: <span class=sf-dump-note title=\"Symfony\\Component\\Mime\\Header\\Headers
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Symfony\\Component\\Mime\\Header</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Headers</span> {<a class=sf-dump-ref>#1354</a><samp data-depth=3 class=sf-dump-compact>
+      -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Header\\Headers`\">headers</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Header\\Headers`\">lineLength</span>: <span class=sf-dump-num>76</span>
+    </samp>}
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\Message`\">body</span>: <span class=sf-dump-const>null</span>
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\Mime\\RawMessage`\">message</span>: <span class=sf-dump-const>null</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">embeddedFiles</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1985900716\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $mailData at C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php:48)
+[stacktrace]
+#0 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#1 C:\\xampp_\\htdocs\\dybella-api\\resources\\views\\emails\\birthday.blade.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#2 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\xampp_\\\\htdoc...')
+#3 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp_\\\\htdoc...', Array)
+#5 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp_\\\\htdoc...', Array)
+#6 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp_\\\\htdoc...', Array)
+#7 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(383): Illuminate\\View\\View->render()
+#10 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(360): Illuminate\\Mail\\Mailer->renderView('emails.birthday', Array)
+#11 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(272): Illuminate\\Mail\\Mailer->addContent(Object(Illuminate\\Mail\\Message), 'emails.birthday', NULL, NULL, Array)
+#12 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(212): Illuminate\\Mail\\Mailer->send('emails.birthday', Array, Object(Closure))
+#13 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->Illuminate\\Mail\\{closure}()
+#14 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(213): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#15 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(309): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\Mailer))
+#16 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(253): Illuminate\\Mail\\Mailer->sendMailable(Object(App\\Mail\\BirthdayGreetings))
+#17 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\PendingMail.php(124): Illuminate\\Mail\\Mailer->send(Object(App\\Mail\\BirthdayGreetings))
+#18 C:\\xampp_\\htdocs\\dybella-api\\app\\Http\\Controllers\\ClientController.php(143): Illuminate\\Mail\\PendingMail->send(Object(App\\Mail\\BirthdayGreetings))
+#19 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\ClientController->getBirthdayClient()
+#20 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getBirthdayClie...', Array)
+#21 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ClientController), 'getBirthdayClie...')
+#22 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#23 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Route->run()
+#24 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#29 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#30 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#31 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 C:\\xampp_\\htdocs\\dybella-api\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $mailData at C:\\xampp_\\htdocs\\dybella-api\\storage\\framework\\views\\f00e43dd2cb466be9e96b0220a6d645a1c7765d9.php:48)
+[stacktrace]
+#0 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#1 C:\\xampp_\\htdocs\\dybella-api\\storage\\framework\\views\\f00e43dd2cb466be9e96b0220a6d645a1c7765d9.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\xampp_\\\\htdoc...', 48)
+#2 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\xampp_\\\\htdoc...')
+#3 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\xampp_\\\\htdoc...', Array)
+#5 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp_\\\\htdoc...', Array)
+#6 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\xampp_\\\\htdoc...', Array)
+#7 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(383): Illuminate\\View\\View->render()
+#10 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(360): Illuminate\\Mail\\Mailer->renderView('emails.birthday', Array)
+#11 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(272): Illuminate\\Mail\\Mailer->addContent(Object(Illuminate\\Mail\\Message), 'emails.birthday', NULL, NULL, Array)
+#12 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(212): Illuminate\\Mail\\Mailer->send('emails.birthday', Array, Object(Closure))
+#13 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->Illuminate\\Mail\\{closure}()
+#14 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(213): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#15 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(309): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\Mailer))
+#16 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(253): Illuminate\\Mail\\Mailer->sendMailable(Object(App\\Mail\\BirthdayGreetings))
+#17 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\PendingMail.php(124): Illuminate\\Mail\\Mailer->send(Object(App\\Mail\\BirthdayGreetings))
+#18 C:\\xampp_\\htdocs\\dybella-api\\app\\Http\\Controllers\\ClientController.php(143): Illuminate\\Mail\\PendingMail->send(Object(App\\Mail\\BirthdayGreetings))
+#19 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\ClientController->getBirthdayClient()
+#20 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getBirthdayClie...', Array)
+#21 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ClientController), 'getBirthdayClie...')
+#22 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#23 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Route->run()
+#24 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#29 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#30 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#31 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 C:\\xampp_\\htdocs\\dybella-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 C:\\xampp_\\htdocs\\dybella-api\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 {main}
+"} 

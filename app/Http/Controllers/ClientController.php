@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BirthdayGreetings;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Services\ApiService;
 use Carbon\Carbon;
 use Error;
+use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
 {
@@ -15,7 +17,7 @@ class ClientController extends Controller
     public function __construct(ApiService $apiService)
     {
         $this->apiService = $apiService;
-        $this->middleware('auth:api', ['except' => ['create']]);
+        $this->middleware('auth:api', ['except' => ['create', 'getBirthdayClient']]);
     }
 
     public function index(Request $request)
@@ -127,6 +129,18 @@ class ClientController extends Controller
         } catch (\Exception $e) {
             $message = $e->getMessage();
             return $this->apiService->sendResponse([], $message, 400, false);
+        }
+    }
+
+    public function getBirthdayClient()
+    {
+        $currentDate = Carbon::now();
+
+        $clients = Client::whereMonth('date_birthday', $currentDate->month)
+            ->whereDay('date_birthday', $currentDate->day)
+            ->get();
+        foreach ($clients as $client) {
+            Mail::to($client->email)->send(new BirthdayGreetings($client));
         }
     }
 }
