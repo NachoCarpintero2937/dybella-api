@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Services\ApiService;
+use Carbon\Carbon;
 use Error;
 
 class ClientController extends Controller
@@ -20,15 +21,27 @@ class ClientController extends Controller
     public function index(Request $request)
     {
         $data = [];
+
         try {
-            $clients = Client::all();
+            $clients = Client::query();
 
             // Filter by id
             if ($request->has('id')) {
-                $clients = $clients->where('id', $request->id);
+                $clients->where('id', $request->id);
             }
 
-            $data = ['clients' =>  $clients->values()->toArray()];
+            // Filter by date_birthday (cumpleaños)
+            if ($request->has('date_birthday')) {
+                $dateBirthday = Carbon::parse($request->date_birthday);
+
+                // Filtrar por mes y día de cumpleaños
+                $clients->whereMonth('date_birthday', $dateBirthday->month)
+                    ->whereDay('date_birthday', $dateBirthday->day);
+            }
+
+            $clients = $clients->get();
+
+            $data = ['clients' => $clients->values()->toArray()];
             return $this->apiService->sendResponse($data, '', 200, true);
         } catch (\Exception $e) {
             $message = $e->getMessage();
