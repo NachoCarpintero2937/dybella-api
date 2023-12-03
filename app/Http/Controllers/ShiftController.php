@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 namespace App\Http\Controllers;
 
+use App\Mail\Recordatory;
 use App\Mail\TurnAssigned;
 use App\Models\Client;
 use App\Models\Service;
@@ -199,7 +200,43 @@ class ShiftController extends Controller
             return $this->apiService->sendResponse([], $message, 400, false);
         }
     }
+    public function getShiftsForTomorrowAndSendReminderEmail()
+    {
+        $data = [];
+        try {
+            $tomorrowDate = Carbon::tomorrow()->toDateString();
 
+            $query = Shift::with(['user', 'service', 'client', 'service.price'])
+                ->whereDate('date_shift', $tomorrowDate)
+                ->where('status', 0);
+
+            $shiftsForTomorrow = $query->get();
+
+            // Envía el correo electrónico de recordatorio a cada cliente
+            $countEmail = 0;
+            foreach ($shiftsForTomorrow as $shift) {
+                $countEmail++;
+                $clientEmail = $shift->client->email; // Asumiendo que la relación con el cliente está configurada correctamente
+                $mailValidator = [
+                    "name" => $shift->client->name,
+                    "service" => $shift->service->name
+                ];
+                // Verifica si el cliente tiene una dirección de correo electrónico antes de enviar el correo
+                if ($clientEmail) {
+                    Mail::to($clientEmail)->send(new Recordatory($mailValidator));
+                }
+            }
+
+            $data = [
+                "countEmails" => $countEmail
+            ];
+            $statusCode = 200;
+            return $this->apiService->sendResponse($data, '', $statusCode, true);
+        } catch (Exception $e) {
+            $message = $e->getMessage();
+            return $this->apiService->sendResponse($data, $message, 400, false);
+        }
+    }
 
     // emails
     public function sendEmailsForNewShiftsInFiveMinutes()
@@ -237,6 +274,7 @@ class ShiftController extends Controller
             $this->sendEmailForNewShift($validatedData);
         }
     }
+
     public function sendEmailForNewShift($validatedData)
     {
         // Obtén el nombre del servicio

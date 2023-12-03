@@ -58,9 +58,7 @@ class ClientController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required|string|max:255',
                 'cod_area' => 'required',
-                'email' => 'email',
                 'phone' => 'required',
-                'date_birthday' => 'date',
             ]);
 
             $client = Client::createClient($validatedData);
@@ -94,10 +92,8 @@ class ClientController extends Controller
         try {
             $validatedData = $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'email',
                 'cod_area' => 'required',
                 'phone' => 'required',
-                'date_birthday' => 'date',
             ]);
             $clientUp = $client->updateClient($validatedData);
             $data = [
