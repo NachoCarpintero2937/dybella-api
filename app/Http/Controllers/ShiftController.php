@@ -168,9 +168,10 @@ class ShiftController extends Controller
 
             $validatedData = $request->validate([
                 'status' => 'required',
+                'price' => 'required'
             ]);
 
-            $shift->update(['status' => $request->status]);
+            $shift->update($validatedData);
 
             return $this->apiService->sendResponse($shift, 'Status actualizado correctamente', 200, true);
         } catch (\Exception $e) {
