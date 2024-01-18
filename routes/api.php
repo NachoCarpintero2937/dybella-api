@@ -53,6 +53,7 @@ Route::middleware(['api'])->group(function () {
         Route::post('/updateStatus', 'updateStatus');
         Route::get('/emailShifts', 'sendEmailsForNewShiftsInFiveMinutes');
         Route::get('/reminderShifts', 'getShiftsForTomorrowAndSendReminderEmail');
+        Route::get('/reports', 'reportsMonth');
     });
 
     Route::controller(UserController::class)->prefix('users')->group(function () {

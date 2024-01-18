@@ -295,4 +295,72 @@ class ShiftController extends Controller
             }
         }
     }
+
+    public function reportsMonth()
+    {
+        try {
+            // Obtener el total de precios agrupados por mes para registros con status 1
+            $monthlyTotals = DB::table('shifts')
+                ->select(DB::raw('YEAR(date_shift) as year'), DB::raw('MONTH(date_shift) as month'), DB::raw('SUM(price) as total'))
+                ->where('status', 1)
+                ->groupBy(DB::raw('YEAR(date_shift)'), DB::raw('MONTH(date_shift)'))
+                ->get();
+
+            // Obtener la cantidad de reservas canceladas (estado 2) por mes
+            $canceledCounts = DB::table('shifts')
+                ->select(DB::raw('YEAR(date_shift) as year'), DB::raw('MONTH(date_shift) as month'), DB::raw('COUNT(*) as canceled_count'))
+                ->where('status', 2)
+                ->groupBy(DB::raw('YEAR(date_shift)'), DB::raw('MONTH(date_shift)'))
+                ->get();
+
+            // Crear un array asociativo para almacenar los totales, reservas canceladas y totales por año
+            $totalPrices = [];
+            $cancelledShifts = [];
+            $totalYears = [];
+            $allMonths = [
+                'january', 'february', 'march', 'april', 'may', 'june',
+                'july', 'august', 'september', 'october', 'november', 'december'
+            ];
+
+            foreach ($allMonths as $month) {
+                $monthName = trans('date.months.' . $month);
+                $totalPrices[$monthName] = 0;
+                $cancelledShifts[$monthName] = 0;
+            }
+
+            foreach ($monthlyTotals as $total) {
+                $year = $total->year;
+                $monthName = trans('date.months.' . strtolower(Carbon::create()->month($total->month)->format('F')));
+
+                // Inicializar el contador de precios por año si aún no existe
+                if (!isset($totalYears[$year])) {
+                    $totalYears[$year] = 0;
+                }
+
+                $totalYears[$year] += (float) $total->total;
+
+                $totalPrices[$monthName] = (float) $total->total;
+            }
+
+            foreach ($canceledCounts as $canceledCount) {
+                $monthName = trans('date.months.' . strtolower(Carbon::create()->month($canceledCount->month)->format('F')));
+                $cancelledShifts[$monthName] = (int) $canceledCount->canceled_count;
+            }
+
+            // Devolver la respuesta exitosa
+            $data = [
+                'totalPrices' => $totalPrices,
+                'cancelled_shifts' => $cancelledShifts,
+                'totalYears' => $totalYears,
+            ];
+
+            $statusCode = 200;
+            return $this->apiService->sendResponse($data, '', $statusCode, true);
+        } catch (\Exception $e) {
+            // En caso de excepción, devolver la respuesta de error
+            $data = ['error' => $e->getMessage()];
+            $statusCode = 500;
+            return $this->apiService->sendResponse($data, '', $statusCode, false);
+        }
+    }
 }
