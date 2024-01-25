@@ -168,7 +168,8 @@ class ShiftController extends Controller
 
             $validatedData = $request->validate([
                 'status' => 'required',
-                'price' => 'required'
+                'price' => 'required',
+                'description' => 'nullable|string',
             ]);
 
             $shift->update($validatedData);

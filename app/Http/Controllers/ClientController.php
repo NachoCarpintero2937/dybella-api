@@ -23,25 +23,24 @@ class ClientController extends Controller
     public function index(Request $request)
     {
         $data = [];
-
         try {
-            $clients = Client::query();
+            $clients = Client::all();
 
-            // Filter by id
+            // Filtro por id
             if ($request->has('id')) {
-                $clients->where('id', $request->id);
+                $clients = $clients->where('id', $request->id);
             }
 
-            // Filter by date_birthday (cumpleaños)
+            // Filtro por fecha de cumpleaños
             if ($request->has('date_birthday')) {
-                $dateBirthday = Carbon::parse($request->date_birthday);
-
-                // Filtrar por mes y día de cumpleaños
-                $clients->whereMonth('date_birthday', $dateBirthday->month)
-                    ->whereDay('date_birthday', $dateBirthday->day);
+                $clients = $clients->filter(function ($client) use ($request) {
+                    $birthday = Carbon::parse($client->date_birthday);
+                    return $this->hasBirthdayToday($client->date_birthday) && $birthday->year !== Carbon::now()->year;
+                });
             }
 
-            $clients = $clients->get();
+            // Ordenar por nombre
+            $clients = $clients->sortBy('name');
 
             $data = ['clients' => $clients->values()->toArray()];
             return $this->apiService->sendResponse($data, '', 200, true);
@@ -50,28 +49,38 @@ class ClientController extends Controller
             return $this->apiService->sendResponse($data, $message, 400, false);
         }
     }
+    private function hasBirthdayToday($birthday)
+    {
+        $birthday = Carbon::parse($birthday);
 
+        // Obtener solo el día y el mes de la fecha de cumpleaños
+        $birthdayWithoutYear = $birthday->setYear(Carbon::now()->year);
+
+        // Comparar solo el día y el mes sin tener en cuenta el año
+        return $birthdayWithoutYear->isSameDay(Carbon::now());
+    }
     public function create(Request $request)
     {
         $data = [];
         try {
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'nullable|email',
-                'cod_area' => 'required',
-                'phone' => 'required',
-                'date_birthday' => 'nullable|date',
-            ]);
+            $validatedData = $request->validate(
+                [
+                    'name' => 'required|string|max:255',
+                    'email' => 'nullable|email',
+                    'cod_area' => 'required',
+                    'phone' => 'required|unique:clients,phone',
+                    'date_birthday' => 'nullable|date',
+                ],
+                [
+                    'phone.unique' => 'Este número de teléfono ya se encuentra registrado',
+                ]
+            );
 
             $client = Client::createClient($validatedData);
             $data = ['client' => $client];
             return $this->apiService->sendResponse($data, '', 200, true);
-        } catch (\Exception $e) {
-            $message =  $e->getMessage();
-            // Verificar si la excepción es de tipo QueryException y si es por clave única duplicada
-            if ($e instanceof \Illuminate\Database\QueryException && strpos($message, 'clients_email_unique') !== false) {
-                $message = 'Este correo electrónico ya está registrado';
-            }
+        } catch (\Illuminate\Database\QueryException $e) {
+            $message = $e->getMessage();
             return $this->apiService->sendResponse($data, $message, 400, false);
         }
     }
