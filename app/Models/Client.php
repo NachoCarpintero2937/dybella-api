@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $fillable = ['name', 'email','cod_area', 'phone', 'date_birthday'];
+    protected $fillable = ['name', 'email', 'cod_area', 'phone', 'date_birthday'];
 
     public static function createClient($data)
     {
@@ -33,5 +33,11 @@ class Client extends Model
             throw $e;
         }
     }
+
+    public function shifts()
+    {
+        return $this->hasMany(Shift::class);
+    }
+
     use HasFactory;
 }

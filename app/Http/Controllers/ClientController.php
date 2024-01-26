@@ -24,7 +24,7 @@ class ClientController extends Controller
     {
         $data = [];
         try {
-            $clients = Client::all();
+            $clients = Client::with('shifts')->get();
 
             // Filtro por id
             if ($request->has('id')) {
@@ -39,6 +39,13 @@ class ClientController extends Controller
                 });
             }
 
+            // Agregar el indicador de turno para cada cliente
+            $clients->transform(function ($client) {
+                $client->shift = $client->shifts->isNotEmpty(); // Indica si el cliente tiene turnos
+                unset($client->shifts); // No necesitamos los detalles de los turnos aquí
+                return $client;
+            });
+
             // Ordenar por nombre
             $clients = $clients->sortBy('name');
 
@@ -49,6 +56,7 @@ class ClientController extends Controller
             return $this->apiService->sendResponse($data, $message, 400, false);
         }
     }
+
     private function hasBirthdayToday($birthday)
     {
         $birthday = Carbon::parse($birthday);
@@ -72,7 +80,7 @@ class ClientController extends Controller
                     'date_birthday' => 'nullable|date',
                 ],
                 [
-                    'phone.unique' => 'Este número de teléfono ya se encuentra registrado',
+                    'phone.unique' => 'Este cliente ya se encuentra registrado',
                 ]
             );
 
@@ -122,24 +130,31 @@ class ClientController extends Controller
     public function destroy(Request $request)
     {
         try {
-
             if (!$request->id) {
                 return $this->apiService->sendResponse([], 'El id del cliente es requerido', 400, false);
             }
 
             $client = Client::find($request->id);
 
-            if (!$request->id) {
-                return $this->apiService->sendResponse([], 'El id del cliente es requerido', 400, false);
-            }
-
             if (!$client) {
                 return $this->apiService->sendResponse([], 'El cliente no fue encontrado', 404, false);
             }
 
+            // Intenta eliminar el cliente
             $client->deleteClient();
+
             return $this->apiService->sendResponse([], 'Cliente eliminado con éxito', 200, true);
+        } catch (\Illuminate\Database\QueryException $e) {
+            // Error de integridad de la base de datos
+            if ($e->errorInfo[1] === 1451) {
+                return $this->apiService->sendResponse([], 'No se puede eliminar el cliente porque tiene turnos asignados', 400, false);
+            } else {
+                // Otro tipo de error de base de datos
+                $message = $e->getMessage();
+                return $this->apiService->sendResponse([], $message, 400, false);
+            }
         } catch (\Exception $e) {
+            // Otros tipos de excepciones
             $message = $e->getMessage();
             return $this->apiService->sendResponse([], $message, 400, false);
         }

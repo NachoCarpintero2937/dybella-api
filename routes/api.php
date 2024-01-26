@@ -43,6 +43,7 @@ Route::middleware(['api'])->group(function () {
         Route::get('', 'index');
         Route::post('/create', 'create');
         Route::post('/update', 'update');
+        Route::post('/delete', 'destroy');
         Route::get('/birthdays', 'getBirthdayClient');
     });
     Route::controller(ShiftController::class)->prefix('shifts')->group(function () {

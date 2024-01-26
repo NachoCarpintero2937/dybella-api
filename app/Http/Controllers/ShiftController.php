@@ -64,6 +64,9 @@ class ShiftController extends Controller
                 $query->whereDate('date_shift', $request->date_shift);
             }
 
+            // Order by date_shift
+            $query->orderBy('date_shift');
+
             $shifts = $query->get();
 
             $data = [
