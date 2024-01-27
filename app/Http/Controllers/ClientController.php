@@ -24,39 +24,35 @@ class ClientController extends Controller
     {
         $data = [];
         try {
-            $clients = Client::with('shifts')->get();
+            // Filtrar solo clientes con status igual a 0
+            $clients = Client::where('status', 0);
 
             // Filtro por id
             if ($request->has('id')) {
                 $clients = $clients->where('id', $request->id);
             }
 
-            // Filtro por fecha de cumpleaños
+            // Filtro por fecha de cumpleaños (día y mes, excluyendo el año actual)
             if ($request->has('date_birthday')) {
-                $clients = $clients->filter(function ($client) use ($request) {
-                    $birthday = Carbon::parse($client->date_birthday);
-                    return $this->hasBirthdayToday($client->date_birthday) && $birthday->year !== Carbon::now()->year;
-                });
+                $day = Carbon::parse($request->date_birthday)->day;
+                $month = Carbon::parse($request->date_birthday)->month;
+                $year = Carbon::now()->year;
+
+                $clients = $clients->whereDay('date_birthday', $day)
+                    ->whereMonth('date_birthday', $month)
+                    ->whereYear('date_birthday', '!=', $year);
             }
 
-            // Agregar el indicador de turno para cada cliente
-            $clients->transform(function ($client) {
-                $client->shift = $client->shifts->isNotEmpty(); // Indica si el cliente tiene turnos
-                unset($client->shifts); // No necesitamos los detalles de los turnos aquí
-                return $client;
-            });
-
             // Ordenar por nombre
-            $clients = $clients->sortBy('name');
+            $clients = $clients->orderBy('name')->get();
 
-            $data = ['clients' => $clients->values()->toArray()];
+            $data = ['clients' => $clients->toArray()];
             return $this->apiService->sendResponse($data, '', 200, true);
         } catch (\Exception $e) {
             $message = $e->getMessage();
             return $this->apiService->sendResponse($data, $message, 400, false);
         }
     }
-
     private function hasBirthdayToday($birthday)
     {
         $birthday = Carbon::parse($birthday);
@@ -83,7 +79,8 @@ class ClientController extends Controller
                     'phone.unique' => 'Este cliente ya se encuentra registrado',
                 ]
             );
-
+            // Agregar el valor del estado (status) al conjunto de datos validados
+            $validatedData['status'] = 0;
             $client = Client::createClient($validatedData);
             $data = ['client' => $client];
             return $this->apiService->sendResponse($data, '', 200, true);
@@ -140,21 +137,11 @@ class ClientController extends Controller
                 return $this->apiService->sendResponse([], 'El cliente no fue encontrado', 404, false);
             }
 
-            // Intenta eliminar el cliente
-            $client->deleteClient();
+            // Intenta realizar el borrado lógico
+            $client->softDeleteClient();
 
             return $this->apiService->sendResponse([], 'Cliente eliminado con éxito', 200, true);
-        } catch (\Illuminate\Database\QueryException $e) {
-            // Error de integridad de la base de datos
-            if ($e->errorInfo[1] === 1451) {
-                return $this->apiService->sendResponse([], 'No se puede eliminar el cliente porque tiene turnos asignados', 400, false);
-            } else {
-                // Otro tipo de error de base de datos
-                $message = $e->getMessage();
-                return $this->apiService->sendResponse([], $message, 400, false);
-            }
         } catch (\Exception $e) {
-            // Otros tipos de excepciones
             $message = $e->getMessage();
             return $this->apiService->sendResponse([], $message, 400, false);
         }

@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $fillable = ['name', 'email', 'cod_area', 'phone', 'date_birthday'];
+    protected $fillable = ['name', 'email', 'cod_area', 'phone', 'date_birthday', 'status'];
 
     public static function createClient($data)
     {
@@ -23,21 +24,12 @@ class Client extends Model
             throw $e;
         }
     }
-
-    public function deleteClient()
+    public function softDeleteClient()
     {
-        try {
-            $this->delete();
-            return $this;
-        } catch (\Exception $e) {
-            throw $e;
-        }
+        $this->status = 1; // Cambiar el estado del cliente a inactivo
+        $this->save();
     }
 
-    public function shifts()
-    {
-        return $this->hasMany(Shift::class);
-    }
 
     use HasFactory;
 }
