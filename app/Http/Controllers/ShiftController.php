@@ -100,6 +100,7 @@ class ShiftController extends Controller
 
             // Validación personalizada para verificar si el usuario tiene un turno en el rango de 15 minutos
             $userHasShiftWithinRange = Shift::where('user_id', $validatedData['user_id'])
+                ->where('status', 0) // Agregar condición para el estado 0
                 ->whereBetween('date_shift', [
                     Carbon::parse($validatedData['date_shift'])->subMinutes(15),
                     Carbon::parse($validatedData['date_shift'])->addMinutes(15),
@@ -143,6 +144,7 @@ class ShiftController extends Controller
                 'user_id' => 'required|exists:users,id',
                 'date_shift' => 'required|date',
                 'description' => 'nullable|string',
+                'status' => 'required'
             ]);
             $shiftUp = $shift->updateShift($validatedData);
             $data = [
